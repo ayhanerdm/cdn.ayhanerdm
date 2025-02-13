@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    color-scheme: light dark;
+    
+    --body-background-color: light-dark(hsl(240, 100%, 99%), hsl(0, 0%, 11%));
+    --body-text-color: light-dark(hsl(0, 0%, 11%), hsl(240, 100%, 99%));
+    --body-font-family: "Ubuntu Condensed", sans-serif;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--body-background-color);
+    color: var(--body-text-color);
+    font-family: var(--body-font-family);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 87vh;
+
+    div.container {
+        max-width: 50dvw;
+        margin: 0 auto;
+
+        div.error-details {
+            margin: unset;
+            margin-bottom: 1rem;
+
+            h1.error-title {
+                font-size: 3rem;
+                margin: unset;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                margin: unset;
+                font-size: 1.5rem;
+                text-align: justify;
+            }
+
+            p:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        div.error-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+a:is(:link, :visited, :hover, :active) {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--body-text-color);
+}

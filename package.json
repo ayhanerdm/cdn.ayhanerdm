@@ -1,0 +1,23 @@
+{
+  "name": "cdn.ayhanerdm",
+  "version": "1.0.0",
+  "description": "JavaScript, CSS, SVG and other files for ayhanerdm.me",
+  "main": "index.js",
+  "scripts": {
+    "Sass" : "sass --watch src/Sass:dist/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayhanerdm/cdn.ayhanerdm.git"
+  },
+  "author": "Ayhan Erdem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayhanerdm/cdn.ayhanerdm/issues"
+  },
+  "homepage": "https://github.com/ayhanerdm/cdn.ayhanerdm#readme",
+  "dependencies": {
+    "sass": "^1.84.0",
+    "typescript": "^5.7.3"
+  }
+}

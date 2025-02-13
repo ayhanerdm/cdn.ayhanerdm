@@ -1,0 +1,8 @@
+summary, summary::-webkit-details-marker, details {
+    all: unset;
+}
+
+summary {
+    cursor: pointer;
+    padding: 1rem 0;
+}

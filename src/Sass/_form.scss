@@ -1,0 +1,155 @@
+:root {
+    --input-width: 100%;
+    --input-padding: 1rem;
+
+    --input-border-color: var(--body-text-color);
+    --input-border-style: solid;
+    --input-border-width: 1px;
+    --input-border: var(--input-border-style) var(--input-border-width) var(--input-border-color);
+    --input-border-radius: 5px;
+    --input-letter-spacing: .12rem;
+
+    --input-text-color: var(--body-text-color);
+    --input-background-color: var(--body-background-color);
+
+    --input-cursor: pointer;
+}
+
+input:is([type="text"], [type="password"], [type="email"], [type="number"], [type="date"]), textarea {
+    width: var(--input-width);
+    padding: var(--input-padding);
+    border: var(--input-border);
+    border-radius: var(--input-border-radius);
+    letter-spacing: var(--input-letter-spacing);
+}
+
+input[type="submit"], button {
+    padding: var(--input-padding);
+    border: var(--input-border);
+    border-radius: var(--input-border-radius);
+    background-color: var(--input-background-color);
+    color: var(--input-text-color);
+    letter-spacing: var(--input-letter-spacing);
+    cursor: var(--input-cursor);
+}
+
+/* Base of Login and Register Forms */
+:root {
+    --form-border-radius: 5px;
+    --form-padding: 1rem;
+    --form-margin: 1rem;
+
+    --form-status-success-background-color: #155724;
+    --form-status-error-background-color: #721c24;
+    --form-status-info-background-color: #0c5460;
+
+    --form-text-color: light-dark(#333, #fff);
+    --form-status-text-color: #fff;
+}
+
+div.container.form-container-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container.form-container-2cols {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-items: stretch;
+    width: 76dvw;
+    height: 93dvh;
+    gap: 2rem;
+}
+
+div.login-options {
+    width: 500px;
+}
+
+div.centered-form {
+    width: 500px;
+    height: 320px;
+
+    h1.form-title, h2.form-title, h3.form-title, h4.form-title, h5.form-title, h6.form-title {
+        margin: unset;
+        margin-bottom: var(--form-margin);
+    }
+
+    form {
+        div:not(:last-child) {
+            margin-bottom: var(--form-margin);
+        }
+
+        div > div:not(:last-child) {
+            margin-bottom: var(--form-margin);
+        }
+        
+        div.form-submit {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        
+            a {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    div.links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+div.input-group {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+
+    input {
+        width: 50%;
+    }
+
+    :first-child {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-right: unset;
+    }
+
+    :last-child {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+}
+
+div.form-status {
+    margin-top: var(--form-margin);
+    padding: var(--form-padding);
+    border-radius: var(--form-border-radius);
+    word-wrap: break-word;
+}
+
+div.form-status.success {
+    background-color: var(--form-status-success-background-color);
+    color: var(--login-status-text-color);
+}
+
+div.form-status.error {
+    background-color: var(--form-status-error-background-color);
+    color: var(--login-status-text-color);
+}
+
+div.form-status.info {
+    background-color: var(--form-status-info-background-color);
+    color: var(--form-status-text-color);
+}
+
+.hidden, .hide {
+    display: none;
+}

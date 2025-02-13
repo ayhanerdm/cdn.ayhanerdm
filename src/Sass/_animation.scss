@@ -1,0 +1,72 @@
+.animated-text-background {
+	background: -webkit-linear-gradient(45deg, var(--deep-purple), var(--blue-violet), var(--rebecca-purple), var(--orchid));
+	animation: gradient 15s ease infinite;
+	background-size: 400% 400%;
+}
+
+
+.loading-border {
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+    border-radius: var(--animation-border-radius, 5px);
+	
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -50%;
+		top: -50%;
+		width: 200%;
+		height: 200%;
+        border-radius: var(--animation-border-radius, 5px);
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+		background-image:
+            linear-gradient(
+                var(--deep-purple), var(--deep-purple)
+            ),
+            linear-gradient(
+                var(--blue-violet), var(--blue-violet)
+            ),
+            linear-gradient(
+                var(--rebecca-purple), var(--rebecca-purple)
+            ),
+            linear-gradient(
+                var(--orchid), var(--orchid)
+            )
+            ;
+            animation: rotate 4s linear infinite;
+	}
+	
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 6px;
+		top: 6px;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		background: var(--body-background-color);
+        border-radius: var(--animation-border-radius, 5px);
+	}
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

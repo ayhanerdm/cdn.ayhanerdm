@@ -1,0 +1,55 @@
+@use '_reset';
+@use '_colors';
+@use '_variables';
+
+/* Light and dark themes and their variables */
+@use '_light-dark';
+@use '_animation';
+
+@use '_scrollbar';
+@use '_selection';
+
+/* Interactive elements */
+@use '_dialog';
+@use '_summary';
+@use '_popover';
+
+/* Forms and related stuff */
+@use '_form';
+@use '_register';
+@use '_login';
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: var(--body-background-color);
+    color: var(--body-text-color);
+    font-family: var(--body-font-family);
+
+    div.container {
+        margin: 0 auto;
+    }
+}
+
+pre {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: dashed 1px var(--body-text-color);
+    border-radius: 5px;
+}
+
+a:is(:link, :visited, :hover, :active) {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--body-text-color);
+}
+
+footer {
+    position: fixed;
+    inset: auto 0 0 0;
+    padding: 1rem;
+}
+
+div.form-container {
+    min-width: 40dvw;
+}

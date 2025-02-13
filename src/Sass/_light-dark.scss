@@ -1,0 +1,30 @@
+:root {
+    color-scheme: light dark;
+    
+    --body-background-color: light-dark(var(--white-smoke), var(--eerie-black)); /* #fafafa, #1c1c1c */
+    --body-text-color: light-dark(hsl(0, 0%, 11%), hsl(240, 100%, 99%)); /* #1c1c1c, #fafafa */
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --body-background-color: var(--white-smoke); /* #fafafa */
+        --body-text-color: hsl(0, 0%, 11%); /* #1c1c1c */
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-background-color: var(--eerie-black); /* #1c1c1c */
+        --body-text-color: hsl(240, 100%, 99%); /* #fafafa */
+    }
+}
+
+body[data-theme="light"] {
+    --body-background-color: var(--white-smoke); /* #fafafa */
+    --body-text-color: hsl(0, 0%, 11%); /* #1c1c1c */
+}
+
+body[data-theme="dark"] {
+    --body-background-color: var(--eerie-black); /* #1c1c1c */
+    --body-text-color: hsl(240, 100%, 99%); /* #fafafa */
+}
