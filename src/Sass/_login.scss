@@ -1,47 +1,7 @@
-div.centered-form {
-    p.next-url {
-        margin: unset;
-        margin-top: calc(calc(var(--form-margin) / 2) * -1);
-        margin-bottom: var(--form-margin);
-        a:is(:link, :visited, :hover, :active) {
-            text-decoration: underline;
-            text-decoration-style: dashed;
-            font-style: italic;
-        }
-    }
-
-    div.login-user-card {
-        display: flex;
-        flex-direction: row;
-        align-items: start;
-        gap: 1rem;
-
-        img {
-            width: 4rem;
-            height: 4rem;
-            border-radius: calc( var(--form-border-radius) + .5rem);
-            border: 4px;
-        }
-
-        h3 {
-            line-height: 1rem;
-            font-size: 2rem;
-            margin-top: 3px;
-            margin-bottom: 1rem;
-        }
-    }
-
-    div.login-user-card.cover {
-        border-radius: var(--form-border-radius);
-        background-image: linear-gradient(125deg, var(--body-background-color) 0%, var(--body-background-color) 16%, rgba(0,0,0,0.5048144257703081) 71%), var(--user-cover);
-        background-size: cover;
-        background-position: center;
-        padding: 1rem;
-        padding-left: unset;
-        
-
-        img {
-            /* outline: 1.5px solid var(--form-text-color); */
-        }
-    }
+div.login-box {
+    align-content: center;
+    width: clamp(300px, 40vw, 500px);
+    border-radius: 5px;
+    border: 1px solid #333;
+    padding: 1rem;
 }
