@@ -268,7 +268,7 @@ input:is([type=text], [type=password], [type=email], [type=number], [type=date])
   letter-spacing: var(--input-letter-spacing);
 }
 
-input[type=submit], button {
+input[type=submit], input[type=button], button {
   padding: var(--input-padding);
   border: var(--input-border);
   border-radius: var(--input-border-radius);
@@ -408,12 +408,21 @@ div.second-step, div.third-step {
   display: none;
 }
 
-div.login-box {
-  align-content: center;
-  width: clamp(300px, 40vw, 500px);
-  border-radius: 5px;
-  border: 1px solid #333;
+div.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 97vh;
+}
+
+div.auth-panel {
+  width: 40%;
   padding: 1rem;
+  background-color: #FFF;
+  color: #000;
+}
+div.auth-panel div:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 body {

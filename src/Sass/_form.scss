@@ -23,7 +23,7 @@ input:is([type="text"], [type="password"], [type="email"], [type="number"], [typ
     letter-spacing: var(--input-letter-spacing);
 }
 
-input[type="submit"], button {
+input[type="submit"], input[type="button"], button {
     padding: var(--input-padding);
     border: var(--input-border);
     border-radius: var(--input-border-radius);
