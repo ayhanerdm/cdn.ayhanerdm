@@ -4,7 +4,9 @@
   "description": "JavaScript, CSS, SVG and other files for ayhanerdm.me",
   "main": "index.js",
   "scripts": {
-    "Sass" : "sass --watch src/Sass:dist/css"
+    "Sass": "sass --watch src/Sass:dist/css",
+    "TypeScript": "tsc --watch",
+    "Build": "npm run Sass && npm run TypeScript"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/ayhanerdm/cdn.ayhanerdm#readme",
   "dependencies": {
+    "@simplewebauthn/browser": "^13.1.0",
     "sass": "^1.84.0",
     "typescript": "^5.7.3"
   }

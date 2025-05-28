@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#1c1c1c"/>
+  
+  <!-- Diamond shape -->
+  <polygon points="100,20 180,100 100,180 20,100" fill="#653592"/>
+  
+  <!-- Circles with golden ratio progression -->
+  <circle cx="100" cy="100" r="60" fill="#4F1C82"/>  <!-- First circle inside the diamond -->
+  <circle cx="100" cy="100" r="37.1" fill="#360269"/>  <!-- r ÷ 1.618 = 60 ÷ 1.618 ≈ 37.1 -->
+  <circle cx="100" cy="100" r="22.9" fill="#f8f8ff"/>  <!-- r ÷ 1.618 = 37.1 ÷ 1.618 ≈ 22.9 -->
+</svg>

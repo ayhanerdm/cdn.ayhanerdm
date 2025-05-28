@@ -2,10 +2,12 @@
 @use '_colors';
 @use '_variables';
 
-/* Light and dark themes and their variables */
+/* Light and dark themes and their variables. */
 @use '_light-dark';
-@use '_animation';
+@use '_animations';
+@use '_view-transitions';
 
+/* Scrollbar and text selection styles. */
 @use '_scrollbar';
 @use '_selection';
 
@@ -18,6 +20,14 @@
 @use '_form';
 @use '_register';
 @use '_login';
+
+@use '_components';
+
+@use '_css-tests';
+@use '_landing-page';
+
+@use '_user-profile';
+@use '_user-posts';
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -52,4 +62,8 @@ footer {
 
 div.form-container {
     min-width: 40dvw;
+}
+
+table.xdebug-error {
+    color: #000;
 }

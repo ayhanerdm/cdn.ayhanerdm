@@ -1,63 +1,162 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
+@layer reset {
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  *:not(dialog), *:before:not(dialog), *:after:not(dialog) {
+    margin: 0;
+    padding: 0;
+  }
 }
-
-*:not(dialog), *:before:not(dialog), *:after:not(dialog) {
-  margin: 0;
-  padding: 0;
-}
-
 :root {
-  --white-smoke: hsl(0, 0%, 98%); /* #fafafa */
-  --ghost-white: hsl(240, 100%, 99%); /* #f8f8ff */
-  --eerie-black: hsl(0, 0%, 11%); /* #1c1c1c */
-  --dark-charcoal: hsl(0, 0%, 20%); /* #333333 */
-  --deep-purple: hsl(270, 96%, 21%); /* #360269 */
-  --blue-violet: hsl(270, 65%, 31%); /* #4F1C82 */
-  --rebecca-purple: hsl(270, 50%, 40%); /* #663399 */
-  --orchid: hsl(313, 70%, 66%); /* #E56DCC */
-  --raspberry-pink: hsl(317, 69%, 59%); /* #DF4FB6 */
-  --medium-violet-red: hsl(322, 82%, 42%); /* #C51383 */
-  --lavender: hsl(240, 67%, 94%); /* #e6e6fa */
+  /* White Smoke */
+  --white-smoke: hsla(0, 0%, 98%, 1); /* #fafafa */
+  --white-smoke-10: hsla(0, 0%, 98%, 0.1); /* #fafafa1A */
+  --white-smoke-20: hsla(0, 0%, 98%, 0.2); /* #fafafa33 */
+  --white-smoke-30: hsla(0, 0%, 98%, 0.3); /* #fafafa4D */
+  --white-smoke-40: hsla(0, 0%, 98%, 0.4); /* #fafafa66 */
+  --white-smoke-50: hsla(0, 0%, 98%, 0.5); /* #fafafa80 */
+  --white-smoke-60: hsla(0, 0%, 98%, 0.6); /* #fafafa99 */
+  --white-smoke-70: hsla(0, 0%, 98%, 0.7); /* #fafafaB3 */
+  --white-smoke-80: hsla(0, 0%, 98%, 0.8); /* #fafafaCC */
+  --white-smoke-90: hsla(0, 0%, 98%, 0.9); /* #fafafaE6 */
+  /* Ghost White */
+  --ghost-white: hsla(240, 100%, 99%, 1); /* #f8f8ff */
+  --ghost-white-10: hsla(240, 100%, 99%, 0.1); /* #f8f8ff1A */
+  --ghost-white-20: hsla(240, 100%, 99%, 0.2); /* #f8f8ff33 */
+  --ghost-white-30: hsla(240, 100%, 99%, 0.3); /* #f8f8ff4D */
+  --ghost-white-40: hsla(240, 100%, 99%, 0.4); /* #f8f8ff66 */
+  --ghost-white-50: hsla(240, 100%, 99%, 0.5); /* #f8f8ff80 */
+  --ghost-white-60: hsla(240, 100%, 99%, 0.6); /* #f8f8ff99 */
+  --ghost-white-70: hsla(240, 100%, 99%, 0.7); /* #f8f8ffB3 */
+  --ghost-white-80: hsla(240, 100%, 99%, 0.8); /* #f8f8ffCC */
+  --ghost-white-90: hsla(240, 100%, 99%, 0.9); /* #f8f8ffE6 */
+  /* Eerie Black */
+  --eerie-black: hsla(0, 0%, 11%, 1); /* #1c1c1c */
+  --eerie-black-10: hsla(0, 0%, 11%, 0.1); /* #1c1c1c1A */
+  --eerie-black-20: hsla(0, 0%, 11%, 0.2); /* #1c1c1c33 */
+  --eerie-black-30: hsla(0, 0%, 11%, 0.3); /* #1c1c1c4D */
+  --eerie-black-40: hsla(0, 0%, 11%, 0.4); /* #1c1c1c66 */
+  --eerie-black-50: hsla(0, 0%, 11%, 0.5); /* #1c1c1c80 */
+  --eerie-black-60: hsla(0, 0%, 11%, 0.6); /* #1c1c1c99 */
+  --eerie-black-70: hsla(0, 0%, 11%, 0.7); /* #1c1c1cB3 */
+  --eerie-black-80: hsla(0, 0%, 11%, 0.8); /* #1c1c1cCC */
+  --eerie-black-90: hsla(0, 0%, 11%, 0.9); /* #1c1c1cE6 */
+  /* Dark Charcoal */
+  --dark-charcoal: hsla(0, 0%, 20%, 1); /* #333333 */
+  --dark-charcoal-10: hsla(0, 0%, 20%, 0.1); /* #3333331A */
+  --dark-charcoal-20: hsla(0, 0%, 20%, 0.2); /* #33333333 */
+  --dark-charcoal-30: hsla(0, 0%, 20%, 0.3); /* #3333334D */
+  --dark-charcoal-40: hsla(0, 0%, 20%, 0.4); /* #33333366 */
+  --dark-charcoal-50: hsla(0, 0%, 20%, 0.5); /* #33333380 */
+  --dark-charcoal-60: hsla(0, 0%, 20%, 0.6); /* #33333399 */
+  --dark-charcoal-70: hsla(0, 0%, 20%, 0.7); /* #333333B3 */
+  --dark-charcoal-80: hsla(0, 0%, 20%, 0.8); /* #333333CC */
+  --dark-charcoal-90: hsla(0, 0%, 20%, 0.9); /* #333333E6 */
+  /* Deep Purple */
+  --deep-purple: hsla(270, 96%, 21%, 1); /* #360269 */
+  --deep-purple-10: hsla(270, 96%, 21%, 0.1); /* #3602691A */
+  --deep-purple-20: hsla(270, 96%, 21%, 0.2); /* #36026933 */
+  --deep-purple-30: hsla(270, 96%, 21%, 0.3); /* #3602694D */
+  --deep-purple-40: hsla(270, 96%, 21%, 0.4); /* #36026966 */
+  --deep-purple-50: hsla(270, 96%, 21%, 0.5); /* #36026980 */
+  --deep-purple-60: hsla(270, 96%, 21%, 0.6); /* #36026999 */
+  --deep-purple-70: hsla(270, 96%, 21%, 0.7); /* #360269B3 */
+  --deep-purple-80: hsla(270, 96%, 21%, 0.8); /* #360269CC */
+  --deep-purple-90: hsla(270, 96%, 21%, 0.9); /* #360269E6 */
+  /* Blue Violet */
+  --blue-violet: hsla(270, 65%, 31%, 1); /* #4F1C82 */
+  --blue-violet-10: hsla(270, 65%, 31%, 0.1); /* #4F1C821A */
+  --blue-violet-20: hsla(270, 65%, 31%, 0.2); /* #4F1C8233 */
+  --blue-violet-30: hsla(270, 65%, 31%, 0.3); /* #4F1C824D */
+  --blue-violet-40: hsla(270, 65%, 31%, 0.4); /* #4F1C8266 */
+  --blue-violet-50: hsla(270, 65%, 31%, 0.5); /* #4F1C8280 */
+  --blue-violet-60: hsla(270, 65%, 31%, 0.6); /* #4F1C8299 */
+  --blue-violet-70: hsla(270, 65%, 31%, 0.7); /* #4F1C82B3 */
+  --blue-violet-80: hsla(270, 65%, 31%, 0.8); /* #4F1C82CC */
+  --blue-violet-90: hsla(270, 65%, 31%, 0.9); /* #4F1C82E6 */
+  /* Rebecca Purple */
+  --rebecca-purple: hsla(270, 50%, 40%, 1); /* #663399 */
+  --rebecca-purple-10: hsla(270, 50%, 40%, 0.1); /* #6633991A */
+  --rebecca-purple-20: hsla(270, 50%, 40%, 0.2); /* #66339933 */
+  --rebecca-purple-30: hsla(270, 50%, 40%, 0.3); /* #6633994D */
+  --rebecca-purple-40: hsla(270, 50%, 40%, 0.4); /* #66339966 */
+  --rebecca-purple-50: hsla(270, 50%, 40%, 0.5); /* #66339980 */
+  --rebecca-purple-60: hsla(270, 50%, 40%, 0.6); /* #66339999 */
+  --rebecca-purple-70: hsla(270, 50%, 40%, 0.7); /* #663399B3 */
+  --rebecca-purple-80: hsla(270, 50%, 40%, 0.8); /* #663399CC */
+  --rebecca-purple-90: hsla(270, 50%, 40%, 0.9); /* #663399E6 */
+  /* Orchid */
+  --orchid: hsla(313, 70%, 66%, 1); /* #E56DCC */
+  --orchid-10: hsla(313, 70%, 66%, 0.1); /* #E56DCC1A */
+  --orchid-20: hsla(313, 70%, 66%, 0.2); /* #E56DCC33 */
+  --orchid-30: hsla(313, 70%, 66%, 0.3); /* #E56DCC4D */
+  --orchid-40: hsla(313, 70%, 66%, 0.4); /* #E56DCC66 */
+  --orchid-50: hsla(313, 70%, 66%, 0.5); /* #E56DCC80 */
+  --orchid-60: hsla(313, 70%, 66%, 0.6); /* #E56DCC99 */
+  --orchid-70: hsla(313, 70%, 66%, 0.7); /* #E56DCCB3 */
+  --orchid-80: hsla(313, 70%, 66%, 0.8); /* #E56DCCCC */
+  --orchid-90: hsla(313, 70%, 66%, 0.9); /* #E56DCCE6 */
+  /* Raspberry Pink */
+  --raspberry-pink: hsla(317, 69%, 59%, 1); /* #DF4FB6 */
+  --raspberry-pink-10: hsla(317, 69%, 59%, 0.1); /* #DF4FB61A */
+  --raspberry-pink-20: hsla(317, 69%, 59%, 0.2); /* #DF4FB633 */
+  --raspberry-pink-30: hsla(317, 69%, 59%, 0.3); /* #DF4FB64D */
+  --raspberry-pink-40: hsla(317, 69%, 59%, 0.4); /* #DF4FB666 */
+  --raspberry-pink-50: hsla(317, 69%, 59%, 0.5); /* #DF4FB680 */
+  --raspberry-pink-60: hsla(317, 69%, 59%, 0.6); /* #DF4FB699 */
+  --raspberry-pink-70: hsla(317, 69%, 59%, 0.7); /* #DF4FB6B3 */
+  --raspberry-pink-80: hsla(317, 69%, 59%, 0.8); /* #DF4FB6CC */
+  --raspberry-pink-90: hsla(317, 69%, 59%, 0.9); /* #DF4FB6E6 */
+  /* Medium Violet Red */
+  --medium-violet-red: hsla(322, 82%, 42%, 1); /* #C51383 */
+  --medium-violet-red-10: hsla(322, 82%, 42%, 0.1); /* #C513831A */
+  --medium-violet-red-20: hsla(322, 82%, 42%, 0.2); /* #C5138333 */
+  --medium-violet-red-30: hsla(322, 82%, 42%, 0.3); /* #C513834D */
+  --medium-violet-red-40: hsla(322, 82%, 42%, 0.4); /* #C5138366 */
+  --medium-violet-red-50: hsla(322, 82%, 42%, 0.5); /* #C5138380 */
+  --medium-violet-red-60: hsla(322, 82%, 42%, 0.6); /* #C5138399 */
+  --medium-violet-red-70: hsla(322, 82%, 42%, 0.7); /* #C51383B3 */
+  --medium-violet-red-80: hsla(322, 82%, 42%, 0.8); /* #C51383CC */
+  --medium-violet-red-90: hsla(322, 82%, 42%, 0.9); /* #C51383E6 */
+  /* Lavender */
+  --lavender: hsla(240, 67%, 94%, 1); /* #e6e6fa */
+  --lavender-10: hsla(240, 67%, 94%, 0.1); /* #e6e6fa1A */
+  --lavender-20: hsla(240, 67%, 94%, 0.2); /* #e6e6fa33 */
+  --lavender-30: hsla(240, 67%, 94%, 0.3); /* #e6e6fa4D */
+  --lavender-40: hsla(240, 67%, 94%, 0.4); /* #e6e6fa66 */
+  --lavender-50: hsla(240, 67%, 94%, 0.5); /* #e6e6fa80 */
+  --lavender-60: hsla(240, 67%, 94%, 0.6); /* #e6e6fa99 */
+  --lavender-70: hsla(240, 67%, 94%, 0.7); /* #e6e6faB3 */
+  --lavender-80: hsla(240, 67%, 94%, 0.8); /* #e6e6faCC */
+  --lavender-90: hsla(240, 67%, 94%, 0.9); /* #e6e6faE6 */
 }
 
 :root {
   --body-font-family: "Work Sans", sans-serif;
   --selection-background-color: var(--deep-purple);
   --selection-text-color: var(--body-text-color);
+  --brand-color: var(--deep-purple); /* #360269 */
 }
 
-/* Light and dark themes and their variables */
+/* Light and dark themes and their variables. */
 :root {
   color-scheme: light dark;
   --body-background-color: light-dark(var(--white-smoke), var(--eerie-black)); /* #fafafa, #1c1c1c */
-  --body-text-color: light-dark(hsl(0, 0%, 11%), hsl(240, 100%, 99%)); /* #1c1c1c, #fafafa */
+  --body-text-color: light-dark(var(--eerie-black), var(--white-smoke)); /* #1c1c1c, #fafafa */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --body-background-color: var(--white-smoke); /* #fafafa */
-    --body-text-color: hsl(0, 0%, 11%); /* #1c1c1c */
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body-background-color: var(--eerie-black); /* #1c1c1c */
-    --body-text-color: hsl(240, 100%, 99%); /* #fafafa */
-  }
-}
-body[data-theme=light] {
+[data-theme=light] {
   --body-background-color: var(--white-smoke); /* #fafafa */
-  --body-text-color: hsl(0, 0%, 11%); /* #1c1c1c */
+  --body-text-color: var(--eerie-black); /* #1c1c1c */
 }
 
-body[data-theme=dark] {
+[data-theme=dark] {
   --body-background-color: var(--eerie-black); /* #1c1c1c */
-  --body-text-color: hsl(240, 100%, 99%); /* #fafafa */
+  --body-text-color: var(--white-smoke); /* #fafafa */
 }
 
 .animated-text-background {
@@ -115,6 +214,12 @@ body[data-theme=dark] {
     background-position: 0% 50%;
   }
 }
+@media not (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+/* Scrollbar and text selection styles. */
 *::-webkit-scrollbar {
   height: 7px;
   width: 7px;
@@ -246,144 +351,31 @@ summary {
 }
 
 /* Forms and related stuff */
-:root {
-  --input-width: 100%;
-  --input-padding: 1rem;
-  --input-border-color: var(--body-text-color);
-  --input-border-style: solid;
-  --input-border-width: 1px;
-  --input-border: var(--input-border-style) var(--input-border-width) var(--input-border-color);
-  --input-border-radius: 5px;
-  --input-letter-spacing: .12rem;
-  --input-text-color: var(--body-text-color);
-  --input-background-color: var(--body-background-color);
-  --input-cursor: pointer;
-}
-
-input:is([type=text], [type=password], [type=email], [type=number], [type=date]), textarea {
-  width: var(--input-width);
-  padding: var(--input-padding);
-  border: var(--input-border);
-  border-radius: var(--input-border-radius);
-  letter-spacing: var(--input-letter-spacing);
-}
-
-input[type=submit], input[type=button], button {
-  padding: var(--input-padding);
-  border: var(--input-border);
-  border-radius: var(--input-border-radius);
-  background-color: var(--input-background-color);
-  color: var(--input-text-color);
-  letter-spacing: var(--input-letter-spacing);
-  cursor: var(--input-cursor);
-}
-
-/* Base of Login and Register Forms */
-:root {
-  --form-border-radius: 5px;
-  --form-padding: 1rem;
-  --form-margin: 1rem;
-  --form-status-success-background-color: #155724;
-  --form-status-error-background-color: #721c24;
-  --form-status-info-background-color: #0c5460;
-  --form-text-color: light-dark(#333, #fff);
-  --form-status-text-color: #fff;
-}
-
-div.container.form-container-centered {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-div.container.form-container-2cols {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  align-items: stretch;
-  width: 76dvw;
-  height: 93dvh;
-  gap: 2rem;
-}
-
-div.login-options {
-  width: 500px;
-}
-
-div.centered-form {
-  width: 500px;
-  height: 320px;
-}
-div.centered-form h1.form-title, div.centered-form h2.form-title, div.centered-form h3.form-title, div.centered-form h4.form-title, div.centered-form h5.form-title, div.centered-form h6.form-title {
-  margin: unset;
-  margin-bottom: var(--form-margin);
-}
-div.centered-form form div:not(:last-child) {
-  margin-bottom: var(--form-margin);
-}
-div.centered-form form div > div:not(:last-child) {
-  margin-bottom: var(--form-margin);
-}
-div.centered-form form div.form-submit {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-div.centered-form form div.form-submit a {
-  font-size: 1rem;
-}
-div.centered-form div.links {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-div.input-group {
-  display: flex;
-  flex-direction: row;
-  gap: 0px;
-}
-div.input-group input {
-  width: 50%;
-}
-div.input-group :first-child {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-right: unset;
-}
-div.input-group :last-child {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-}
-
-div.form-status {
-  margin-top: var(--form-margin);
-  padding: var(--form-padding);
-  border-radius: var(--form-border-radius);
-  word-wrap: break-word;
-}
-
-div.form-status.success {
-  background-color: var(--form-status-success-background-color);
-  color: var(--login-status-text-color);
-}
-
-div.form-status.error {
-  background-color: var(--form-status-error-background-color);
-  color: var(--login-status-text-color);
-}
-
-div.form-status.info {
-  background-color: var(--form-status-info-background-color);
-  color: var(--form-status-text-color);
-}
-
-.hidden, .hide {
-  display: none;
+/* Selectors for all input elements */
+.custom-form input,
+.custom-form input[type=text],
+.custom-form input[type=password],
+.custom-form input[type=email],
+.custom-form input[type=number],
+.custom-form input[type=checkbox],
+.custom-form input[type=radio],
+.custom-form input[type=file],
+.custom-form input[type=submit],
+.custom-form input[type=button],
+.custom-form input[type=reset],
+.custom-form input[type=search],
+.custom-form input[type=tel],
+.custom-form input[type=url],
+.custom-form input[type=date],
+.custom-form input[type=time],
+.custom-form input[type=color],
+.custom-form input[type=range],
+.custom-form textarea {
+  width: 100%;
+  padding: 1rem;
+  /* border: 2px solid light-dark(#000000, #ffffff); */
+  background-color: light-dark(#cdcdcd, #4f4f4f);
+  color: light-dark(#000000, #a4a4a4);
 }
 
 div.register-profile-card div.register-cover {
@@ -408,21 +400,269 @@ div.second-step, div.third-step {
   display: none;
 }
 
-div.auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 97vh;
+:root {
+  --auth-background: hsla(0, 2%, 13%, 0.555);
+  --login-container-width: 30%;
+  --login-border-radius: 10px;
+  --login-border: 1px solid hsla(0, 0%, 100%, 0.18);
+  --login-margin: 1rem 0px;
 }
 
-div.auth-panel {
-  width: 40%;
-  padding: 1rem;
-  background-color: #FFF;
-  color: #000;
+body.auth-page.background-blobs {
+  position: relative;
+  overflow: hidden;
 }
-div.auth-panel div:not(:last-child) {
+body.auth-page.background-blobs::before, body.auth-page.background-blobs::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  opacity: 0.6;
+  filter: blur(10px);
+}
+body.auth-page.background-blobs::before {
+  width: 400px;
+  height: 350px;
+  background: hsla(220, 80%, 70%, 0.7);
+  border-radius: 45% 55% 60% 40%/50% 45% 55% 50%;
+  top: 10%;
+  left: 15%;
+  animation: floatBlob1 35s infinite alternate ease-in-out;
+}
+body.auth-page.background-blobs::after {
+  width: 300px;
+  height: 280px;
+  background: hsla(330, 80%, 75%, 0.7);
+  border-radius: 55% 45% 40% 60%/40% 50% 60% 55%;
+  bottom: 15%;
+  right: 10%;
+  animation: floatBlob2 30s infinite alternate ease-in-out;
+  animation-delay: -5s;
+}
+body.auth-page.background-blobs div.auth-container::before, body.auth-page.background-blobs div.auth-container::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  opacity: 0.6;
+  filter: blur(10px);
+}
+body.auth-page.background-blobs div.auth-container::before {
+  width: 350px;
+  height: 300px;
+  background: hsla(120, 70%, 60%, 0.7);
+  border-radius: 60% 40% 55% 45%/45% 55% 50% 50%;
+  top: 30%;
+  right: 20%;
+  animation: floatBlob3 32s infinite alternate ease-in-out;
+}
+body.auth-page.background-blobs div.auth-container::after {
+  width: 250px;
+  height: 220px;
+  background: hsla(45, 85%, 65%, 0.7);
+  border-radius: 40% 60% 50% 50%/55% 45% 60% 40%;
+  bottom: 25%;
+  left: 5%;
+  animation: floatBlob4 28s infinite alternate ease-in-out;
+  animation-delay: -3s;
+}
+
+body.auth-page.background-gradient {
+  background: linear-gradient(to right, rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 27%, rgb(241, 235, 27), rgb(241, 235, 27) 33%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142));
+  background-attachment: fixed;
+  background-size: 200% 200%;
+  animation: gradient 50s ease infinite;
+}
+
+div.auth-container {
+  display: flex;
+  flex-direction: row;
+  height: 96vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+div.auth-container div.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: var(--login-container-width);
+}
+div.auth-container div.login-container div.login-header {
+  text-shadow: 3px 3px 10px #333;
+}
+div.auth-container div.login-container div.login-header h1, div.auth-container div.login-container div.login-header h2, div.auth-container div.login-container div.login-header h3, div.auth-container div.login-container div.login-header h4, div.auth-container div.login-container div.login-header h5, div.auth-container div.login-container div.login-header h6, div.auth-container div.login-container div.login-header p {
+  margin: 0px;
+}
+div.auth-container div.login-container div.login-body {
+  margin: var(--login-margin);
+}
+div.auth-container div.login-container div.login-body div.input-div:not(:last-child) {
   margin-bottom: 1rem;
+}
+div.auth-container div.login-container div.login-body div.alert {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+div.auth-container div.login-container div.login-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-shadow: 3px 3px 10px #333;
+}
+div.auth-container div.login-container div.login-footer * {
+  margin: 0px;
+}
+
+@keyframes floatBlob1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 45% 55% 60% 40%/50% 45% 55% 50%;
+  }
+  50% {
+    transform: translate(40px, 60px) scale(1.1);
+    border-radius: 50% 50% 55% 45%/45% 50% 50% 55%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 45% 55% 60% 40%/50% 45% 55% 50%;
+  }
+}
+@keyframes floatBlob2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 55% 45% 40% 60%/40% 50% 60% 55%;
+  }
+  50% {
+    transform: translate(-50px, -30px) scale(1.05);
+    border-radius: 60% 40% 45% 55%/45% 55% 50% 50%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 55% 45% 40% 60%/40% 50% 60% 55%;
+  }
+}
+@keyframes floatBlob3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 60% 40% 55% 45%/45% 55% 50% 50%;
+  }
+  50% {
+    transform: translate(-30px, 50px) scale(1.08);
+    border-radius: 55% 45% 50% 50%/50% 50% 45% 55%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 60% 40% 55% 45%/45% 55% 50% 50%;
+  }
+}
+@keyframes floatBlob4 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 40% 60% 50% 50%/55% 45% 60% 40%;
+  }
+  50% {
+    transform: translate(60px, -40px) scale(1.12);
+    border-radius: 45% 55% 55% 45%/60% 40% 55% 45%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 40% 60% 50% 50%/55% 45% 60% 40%;
+  }
+}
+/* Status Form */
+div.status-form div.input-div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+div.status-form div.input-div.submit-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 1rem;
+}
+div.status-form div.input-div.submit-button span.character-counter {
+  font-size: 0.95rem;
+  color: var(--body-text-color);
+}
+
+div.user-posts {
+  padding: 1rem;
+}
+
+div.user-post {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: center;
+  justify-content: start;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+div.user-post div.user-post__header {
+  display: flex;
+  align-items: start;
+  align-content: center;
+  justify-content: space-between;
+}
+div.user-post div.user-post__header div.user-post__header-left {
+  display: flex;
+  align-items: start;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+div.user-post div.user-post__header div.user-post__header-left img {
+  width: 3rem;
+  height: 3rem;
+}
+div.user-post div.user-post__header div.user-post__header-left div.user-post__header-left__info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  align-content: center;
+  justify-content: start;
+  height: 3rem;
+}
+div.user-post div.user-post__header div.user-post__header-left div.user-post__header-left__info h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+div.user-post div.user-post__header div.user-post__header-left div.user-post__header-left__info p {
+  font-size: 0.6rem;
+  margin: 0;
+  padding: 0;
+  color: #8e8e8e;
+}
+div.user-post div.user-post__header div.user-post__header-right button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+}
+div.user-post div.user-post__body {
+  padding: 0;
+  font-size: 1rem;
+  color: var(--body-bg-color);
+}
+div.user-post dialog.user-post__options {
+  display: hidden flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: center;
+  justify-content: start;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  color: #333;
+  padding: 1rem;
+  border-radius: 5px;
+}
+div.user-post dialog.user-post__options a {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
 }
 
 body {
@@ -455,6 +695,10 @@ footer {
 
 div.form-container {
   min-width: 40dvw;
+}
+
+table.xdebug-error {
+  color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */

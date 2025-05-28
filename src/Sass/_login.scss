@@ -1,17 +1,209 @@
-div.auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 97vh;
+:root {
+    --auth-background: hsla(0, 2%, 13%, 0.555);
+    --login-container-width: 30%;
+    --login-border-radius: 10px;
+    --login-border: 1px solid hsla(0, 0%, 100%, 0.18);
+    --login-margin: 1rem 0px;
 }
 
-div.auth-panel {
-    width: 40%;
-    padding: 1rem;
-    background-color: #FFF;
-    color: #000;
+body.auth-page.background-blobs {
+    position: relative;
+    overflow: hidden;
 
-    div:not(:last-child) {
-        margin-bottom: 1rem;
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        opacity: 0.6;
+        filter: blur(10px); // Softens the edges for a blob effect
+    }
+
+    &::before {
+        width: 400px;
+        height: 350px;
+        background: hsla(220, 80%, 70%, 0.7); // Blueish blob
+        border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%; // Irregular shape
+        top: 10%;
+        left: 15%;
+        animation: floatBlob1 35s infinite alternate ease-in-out;
+    }
+
+    &::after {
+        width: 300px;
+        height: 280px;
+        background: hsla(330, 80%, 75%, 0.7); // Pinkish blob
+        border-radius: 55% 45% 40% 60% / 40% 50% 60% 55%; // Different irregular shape
+        bottom: 15%;
+        right: 10%;
+        animation: floatBlob2 30s infinite alternate ease-in-out;
+        animation-delay: -5s; // Starts animation at a different point
+    }
+
+    div.auth-container {
+        // Styles for new blobs using auth-container's pseudo-elements
+        // These will be positioned relative to body.auth-page.background-blobs
+        // as div.auth-container is position: static by default.
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1; // Same z-index as body blobs
+            opacity: 0.6;
+            filter: blur(10px);
+        }
+
+        &::before { // Blob 3
+            width: 350px;
+            height: 300px;
+            background: hsla(120, 70%, 60%, 0.7); // Greenish blob
+            border-radius: 60% 40% 55% 45% / 45% 55% 50% 50%; // Irregular shape
+            top: 30%;
+            right: 20%;
+            animation: floatBlob3 32s infinite alternate ease-in-out;
+        }
+
+        &::after { // Blob 4
+            width: 250px;
+            height: 220px;
+            background: hsla(45, 85%, 65%, 0.7); // Yellowish/Orange blob
+            border-radius: 40% 60% 50% 50% / 55% 45% 60% 40%; // Different irregular shape
+            bottom: 25%;
+            left: 5%;
+            animation: floatBlob4 28s infinite alternate ease-in-out;
+            animation-delay: -3s; // Starts animation at a different point
+        }
+    }
+}
+
+body.auth-page.background-gradient {
+    background: linear-gradient(
+            to right,
+            rgb(237, 34, 36),
+            rgb(243, 91, 34),
+            rgb(249, 150, 33),
+            rgb(245, 193, 30),
+            rgb(241, 235, 27) 27%,
+            rgb(241, 235, 27),
+            rgb(241, 235, 27) 33%,
+            rgb(99, 199, 32),
+            rgb(12, 155, 73),
+            rgb(33, 135, 141),
+            rgb(57, 84, 165),
+            rgb(97, 55, 155),
+            rgb(147, 40, 142)
+        );
+    background-attachment: fixed;
+    background-size: 200% 200%;
+	animation: gradient 50s ease infinite;
+}
+
+div.auth-container {
+    display: flex;
+    flex-direction: row;
+    height: 96vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    div.login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: var(--login-container-width);
+
+        div.login-header
+        {
+            text-shadow: 3px 3px 10px #333;
+            h1, h2, h3, h4, h5, h6, p {
+                margin: 0px;
+            }
+        }
+
+        div.login-body {
+
+            margin: var(--login-margin);
+
+            div.input-div:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            div.alert {
+                margin-top: 1rem;
+                margin-bottom: 0;
+            }
+        }
+
+        div.login-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            text-shadow: 3px 3px 10px #333;
+            * {
+                margin: 0px;
+            }
+        }
+    }
+
+}
+
+@keyframes floatBlob1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
+    }
+    50% {
+        transform: translate(40px, 60px) scale(1.1);
+        border-radius: 50% 50% 55% 45% / 45% 50% 50% 55%; // Morph shape
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
+    }
+}
+
+@keyframes floatBlob2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 55% 45% 40% 60% / 40% 50% 60% 55%;
+    }
+    50% {
+        transform: translate(-50px, -30px) scale(1.05);
+        border-radius: 60% 40% 45% 55% / 45% 55% 50% 50%; // Morph shape
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 55% 45% 40% 60% / 40% 50% 60% 55%;
+    }
+}
+
+@keyframes floatBlob3 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 60% 40% 55% 45% / 45% 55% 50% 50%;
+    }
+    50% {
+        transform: translate(-30px, 50px) scale(1.08);
+        border-radius: 55% 45% 50% 50% / 50% 50% 45% 55%; // Morph shape
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 60% 40% 55% 45% / 45% 55% 50% 50%;
+    }
+}
+
+@keyframes floatBlob4 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 40% 60% 50% 50% / 55% 45% 60% 40%;
+    }
+    50% {
+        transform: translate(60px, -40px) scale(1.12);
+        border-radius: 45% 55% 55% 45% / 60% 40% 55% 45%; // Morph shape
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 40% 60% 50% 50% / 55% 45% 60% 40%;
     }
 }

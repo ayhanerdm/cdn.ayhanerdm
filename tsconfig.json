@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      /* Temel Seçenekler */
+      "target": "es2024",                     // Hangi JavaScript sürümüne derleneceğini belirtir (es5 eski tarayıcılarla uyumluluk için iyidir, modern tarayıcılar için "es2015" veya üstü kullanılabilir)
+      "module": "es2022",                  // Hangi modül sisteminin kullanılacağını belirtir (web için "es2015", "esnext" veya "system" yaygındır)
+      "lib": ["dom", "es2024", "dom.iterable"], // Derleme sırasında kullanılabilir kütüphane dosyalarını belirtir ("dom" tarayıcı ortamı için gereklidir)
+      "outDir": "./dist/js",                    // Derlenmiş JavaScript dosyalarının nereye kaydedileceğini belirtir
+      "rootDir": "./src/TypeScript",                  // TypeScript kaynak dosyalarınızın bulunduğu kök dizini belirtir (isteğe bağlı ama düzen için iyi)
+      "strict": true,                      // Tüm katı tür denetimi seçeneklerini etkinleştirir (önerilir)
+      "esModuleInterop": true,             // CommonJS modüllerinin ES modülleri gibi içe aktarılmasına izin verir
+      "sourceMap": true,                   // Hata ayıklama için .map dosyaları oluşturur (geliştirme sırasında çok faydalıdır)
+  
+      /* Ekstra Faydalı Seçenekler */
+      // "noImplicitAny": true,            // 'any' türünün örtük olarak kullanıldığı ifadelerde hata verir
+      // "strictNullChecks": true,         // 'null' ve 'undefined' değerlerini daha katı bir şekilde kontrol eder
+      // "removeComments": true,           // Derlenmiş JavaScript dosyalarından yorumları kaldırır (üretim için)
+      // "noUnusedLocals": true,           // Kullanılmayan yerel değişkenler için hata verir
+      // "noUnusedParameters": true,       // Kullanılmayan parametreler için hata verir
+    },
+    "include": [
+      "./src/TypeScript/*"                         // Derlenecek dosyaların desenlerini belirtir (bu örnekte src klasöründeki tüm .ts dosyaları)
+    ],
+    "exclude": [
+      "node_modules",                      // Derleme dışında tutulacak dosyaları belirtir
+      "**/*.test.ts"                       // Test dosyalarını derleme dışında tutmak için bir örnek
+    ]
+}  
